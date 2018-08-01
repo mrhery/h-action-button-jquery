@@ -5,6 +5,30 @@
 </head>
 
 <body>
-
+	<button class="action-button" data-value="button_one_value" data-param='{"data_json" : "you may use json in data-param"}' data-command="runThis">
+		Button One
+	</button>
+	
+	<button class="action-button" data-value="button_two_value" data-param='{"data_two" : "Goes HERE"}' data-command="runThis">
+		Button Two
+	</button>
+	
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<script src="../hab-jquery.js"></script>
+	<script>
+		//Put your code here:
+		
+		//value will contain array value type
+		//with 2 indexed data.
+		//array(json, value)
+		
+		function runThis(value){
+			var obj = JSON.parse(value[0]);	//Convert data-parameter to JS Object.
+			var val = value[1]; 			//Convert data-value to JS Variable
+			
+			alert("This is value from data :" + val);
+			console.log("This is object: " + obj);
+		}
+	</script>
 </body>
 </html
