@@ -1,9 +1,9 @@
 /********************************************************************************
- *Hery - Action Button JQuery												 	*
- *Developed & Designed by Mr Hery											 	*
- *On Mid June 2018 @ Intelligent Hosting Pte Ltd Development Lab (MY-HQ)	 	*
+ *Hery - Action Button JQuery							*
+ *Developed & Designed by Mr Hery						*
+ *On Mid June 2018 @ Intelligent Hosting Pte Ltd Development Lab (MY-HQ)	*
  *This simple JS script will allow developer to run script on event of element	*
- *with set of value & parameter parse in element attribute itself.			 	*
+ *with set of value & parameter parse in element attribute itself.		*
  ********************************************************************************/
  
 $(document).ready(function(){
