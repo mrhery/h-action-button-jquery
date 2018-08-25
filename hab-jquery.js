@@ -80,7 +80,11 @@ $(document).ready(function(){
 					
 					if(navigate !== undefined){
 						if($(this).attr("data-target") != undefined){
-							window.open(navigate);
+							if($(this).attr("data-target") == "_blank"){
+								window.open(navigate);
+							}else if($(this).attr("data-target") == "pop_view"){
+								window.open(navigate, "Intelhost Cloud", "width=600,height=500");
+							}
 						}else{
 							window.location = navigate;
 						}
@@ -227,7 +231,7 @@ function hab_handler(value){
 	input = obj.input;
 	value = obj.value;
 	action = obj.action;
-	var _param = obj.param;
+	var _param = JSON.stringify(obj.param);
 	
 	if(_param === "undefined"){
 		param[0] = "";
