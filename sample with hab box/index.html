@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hery Action Button JQuery Addon</title>
+	<meta charset="UTF-8" />
+	<script>
+		function base64_encode(str){
+			return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+		        function toSolidBytes(match, p1) {
+		            return String.fromCharCode('0x' + p1);
+		    }));
+		}
+		
+		function base64_decode(str){
+			return decodeURIComponent(atob(str).split('').map(function(c) {
+		        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+		    }).join(''));
+		}
+	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="../hab-jquery.js"></script>
+	<script src="../hab-box.js"></script>
+	<script>
+		function actionx(value){
+			console.log(value);
+		}
+	</script>
+	<!--
+		In this example, demonstrate how to show a confirmation boz before executing any funtion 
+		that triggered by HAB.
+		
+		Siply use data-confirm="[Your funtion design name or use default one, basic_box]", then 
+		put box title data-confirm-title="Title goes here" and box message 
+		data-confirm-message="message goes here"
+	-->
+</head>
+
+
+<body>
+	<button 
+		class="action-button" 
+		data-confirm="test_function" 
+		data-confirm-title="Are you sure?" 
+		data-confirm-message="By clicking button below will move your file to trash folder." 
+		data-param='{"obj":"data"}' 
+		data-value="test" 
+		data-command="actionx"
+	>
+		Click Me
+	</button>
+</body>
+</html>
